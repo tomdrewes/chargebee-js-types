@@ -192,12 +192,12 @@ type PaymentInfo = {
 interface ThreeDSHandler {
   setPaymentIntent(
     paymentIntent: PaymentIntent,
-    options: SetPaymentIntentOptions
+    options?: SetPaymentIntentOptions
   ): void;
   updatePaymentIntent(paymentIntent: PaymentIntent): void;
   handleCardPayment(
-    paymentInfo: PaymentInfo,
-    callbacks: Callbacks
+    paymentInfo?: PaymentInfo,
+    callbacks?: Callbacks
   ): Promise<PaymentIntent>;
   getPaymentIntent(): PaymentIntent;
 }
@@ -310,10 +310,7 @@ type ChargebeeInstance = {
   openCheckout(options: OpenCheckoutOptions): void;
   getCart(): Cart;
   getProduct(checkoutButtonElement: HTMLElement): Product;
-  initializeProduct(
-    planId: string,
-    planQuantity: number
-  ): Product;
+  initializeProduct(planId: string, planQuantity: number): Product;
   setCheckoutCallbacks(
     setterFunction: (cart: Cart) => SetCheckoutCallbacks
   ): void;

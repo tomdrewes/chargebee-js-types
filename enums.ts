@@ -131,6 +131,7 @@ export enum PaymentIntentStatus {
   IN_PROGRESS = 'in_progress',
   AUTHORIZED = 'authorized',
   CONSUMED = 'consumed',
+  EXPIRED = 'expired',
 }
 
 export enum PaymentMethodType {
